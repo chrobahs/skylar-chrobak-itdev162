@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Domain;
@@ -23,5 +24,14 @@ namespace API.Controllers
     {
       return this.context.Posts.ToList();
     }
+      ///<summary>
+      ///</summary>
+      ///<param name="id">Post id</param>
+      ///<returns>A single post</returns>
+      [HttpGet("{id}")]
+      public ActionResult<Post> GetById(Guid id){
+        return this.context.Posts.Find(id);
+      }
+
   }
 }
