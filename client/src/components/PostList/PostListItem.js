@@ -14,7 +14,7 @@ const PostListItem = props =>{
     return (
         <div>
         <div className="postListItem" onClick={() => handleClickPost(post)}>
-            <h2>{post.title}</h2>
+            <h2>{post.title} </h2>
             <p>(post.body)</p>
         </div>
         <div className="postControls">
