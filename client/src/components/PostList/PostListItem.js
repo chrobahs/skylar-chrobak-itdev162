@@ -23,5 +23,4 @@ const PostListItem = props =>{
         </div>
         );
     };
-
     export default PostListItem;
