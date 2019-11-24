@@ -62,7 +62,7 @@ namespace API.Controllers
   ///<returns>An updated post</returns>
   [HttpPut]
   public ActionResult<Post> Update([FromBody]Post request){
-    var post = ContextBoundObject.Posts.Find(request.Id);
+    var post = context.Posts.Find(request.Id);
     if (request == null){
       throw new Exception("Could not find post");
     }
@@ -70,7 +70,7 @@ namespace API.Controllers
     post.Title =request.Title != null ? request.Title : post.Title;
     post.Body = request.Body != null ? request.Body : post.Body;
     post.Date = request.Date != null ? request.Date : post.Date;
-    var success = ContextBoundObject.SaveChanges() >0;
+    var success = ContextBoundObject.SaveChanges() > 0;
     if (success){
       return post;
     }
